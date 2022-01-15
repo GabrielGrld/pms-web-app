@@ -43,7 +43,7 @@ export default function Signup() {
   }
 
     return (
-        <div>
+        
           <form className="auth-form" onSubmit={handleSubmit}>
             <h1>Sign up</h1>
             <label>
@@ -88,6 +88,6 @@ export default function Signup() {
             {isPending && <button className='btn' disabled>Loading </button>}
             {error && <div className="error">{error}</div>}
           </form>
-        </div>
+        
     )
 }

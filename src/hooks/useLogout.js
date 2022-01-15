@@ -13,6 +13,7 @@ export const useLogout = () => {
     setIsPending(true)
 // sign the user out
     try {
+      
       //update online status
       const {uid} = user
       await projectFirestore.collection('users').doc(uid).update({online: false})
