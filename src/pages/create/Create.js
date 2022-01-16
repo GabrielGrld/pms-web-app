@@ -23,6 +23,7 @@ export default function Create() {
   const [dueDate, setDueDate] = useState('')
   const [category, setCategory] = useState('')
   const [assignedUsers, setAssignedUsers] = useState([])
+  const [formError, setFormError] = useState(null)
 
   //to get the documents and create the users array for the select option
   //This use effect allows us to wait for the documents when it changes from null to an array
@@ -37,6 +38,16 @@ export default function Create() {
 
   const handleSubmit = (e)=>{
       e.preventDefault()
+      setFormError(null)
+
+      if(!category){
+          setFormError('Please select a project category')
+          return  //this means do not go any further, enede here
+      }
+      if(assignedUsers.length<1){
+          setFormError('Please assing the project to at least one user')
+          return
+      }
       console.log(name, details, dueDate, category.value, assignedUsers)
   }
   return (
@@ -87,8 +98,9 @@ export default function Create() {
               isMulti
             />
         </label>
-
+    
     <button className='btn'>Add Project</button>
+    {formError && <p className='error'>{formError}</p>}
       </form>
     </div>
     )
