@@ -10,11 +10,16 @@ export const useDocument = (collection, id) =>{
   // realtime data for document
   useEffect(()=>{
     const ref = projectFirestore.collection(collection).doc(id)
-    
+
     //realtime listener
     const unsubscribe =ref.onSnapshot((snapshot)=>{
-        setDocument({...snapshot.data(), id: snapshot.id})
-        setError(null)
+        if(snapshot.data()){
+          setDocument({...snapshot.data(), id: snapshot.id})
+          setError(null)
+        }else{
+            setError('no such document exists')
+        }
+        
     },(err)=>{      //this is a function that is fired if an error happens. it is the second argument of function onSnapshot
         console.log(err.message)
         setError('failed to get document')
