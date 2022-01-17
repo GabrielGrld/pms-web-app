@@ -8,8 +8,6 @@ import ProjectComments from './ProjectComments'
 //styles
 import './Project.css'
 
-
-
 export default function Project() {
     const { id } = useParams()
     const {error, document} = useDocument('projects', id)
