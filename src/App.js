@@ -35,7 +35,7 @@ const {user, authIsReady} = useAuthContext()
         {!user && <Redirect to="/login"/>}
          {user && <Create />}          
         </Route>
-        <Route  path="/projects/:d">
+        <Route  path="/projects/:id">
         {!user && <Redirect to="/login"/>}
         {user && <Project />} 
           
