@@ -1,0 +1,33 @@
+.single-product {
+    background-color: '';
+    
+}
+
+.product {
+ display: flex;
+ justify-content: space-around;
+ margin: 2% 10%;
+ background-color: '';
+ display:flex;
+  flex-wrap:wrap; /* this */
+  gap:10px;
+ 
+}
+
+.description{
+    align-items: center;
+    background-color: '';
+    color:black;
+    margin-left:0%;
+    max-width: 600px;
+}
+.image {    
+    max-width:100%;
+    max-height:auto;
+    border-radius: 5%;
+}
+.image-container {
+    max-width: 200px;
+    max-height: auto;
+}
+
