@@ -1,6 +1,6 @@
 .sidebar {
-    width: 300px;
-    min-width: 300px;
+    width: 200px;
+    min-width: 200px;
     background: var(--primary-color);
     min-height: 100vh;
     box-sizing: border-box;
@@ -36,6 +36,8 @@
   .sidebar .links img {
     margin-right: 10px;
     filter: invert(100%);
+    max-width: 25px;
+    max-height: 25px;
   }
   .sidebar .links a.active {
     color: #555;

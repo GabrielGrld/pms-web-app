@@ -6,6 +6,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 import './Sidebar.css'
 import DashboardIcon from '../assets/dashboard_icon.svg'
 import AddIcon from '../assets/add_icon.svg'
+import EmeraldIcon from '../assets/emerald.svg'
 
 
 export default function Sidebar() {
@@ -30,6 +31,18 @@ export default function Sidebar() {
                         <NavLink to="/create">
                             <img src={AddIcon} alt="add project icon"/>
                             <span>New Project</span>
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/emeraldstore">
+                            <img src={EmeraldIcon} alt="add project icon"/>
+                            <span>Emerald Store</span>
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/esproducts">
+                            <img src={EmeraldIcon} alt="add project icon"/>
+                            <span> ES Products</span>
                         </NavLink>
                       </li>
                   </ul>
