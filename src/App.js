@@ -14,6 +14,9 @@ import Signup from './pages/signup/Signup'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar';
 import OnlineUsers from './components/OnlineUsers'
+import EmeraldStore from './pages/emeraldstore/EmeraldStore'
+import Products from './pages/products/Products'
+import Product from './pages/product/Product'
 
 
 function App() {
@@ -37,9 +40,14 @@ const {user, authIsReady} = useAuthContext()
         </Route>
         <Route  path="/projects/:id">
         {!user && <Redirect to="/login"/>}
-        {user && <Project />} 
-          
+        {user && <Project />}          
         </Route>
+
+        <Route  path="/emeraldstore">
+        {!user && <Redirect to="/login"/>}
+        {user && <EmeraldStore />}          
+        </Route>
+
         <Route  path="/login">
         {user && <Redirect to="/"/>}
         {!user && <Login />}          
@@ -49,6 +57,17 @@ const {user, authIsReady} = useAuthContext()
         {user && <Redirect to="/"/>}
         {!user && <Signup />}          
         </Route>
+
+        <Route  path="/esproducts">
+        {!user && <Redirect to="/"/>}
+        {user && <Products />}          
+        </Route>
+
+        <Route  path = "/producto/:id">
+        {!user && <Redirect to="/"/>}
+        {user && <Product />} 
+          </Route>
+
       </Switch>
     
        </div>
