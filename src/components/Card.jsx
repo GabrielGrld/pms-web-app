@@ -57,7 +57,9 @@ var formatter = new Intl.NumberFormat('en-US', {
         </CardContent>
       </CardActionArea>
       </Link>
+      <Link  to={{pathname: `/producto/${item.id}`, query: {item }}}>
       <button className="comprar" onClick={()=>console.log("comprar activado")}> <EditIcon /> </button>
+      </Link>
       <button className="comprar"> <PaidIcon /> </button>
     </Card>
     
