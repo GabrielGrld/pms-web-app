@@ -1,5 +1,6 @@
 import { useLocation, useParams } from "react-router-dom"
 import { useDocument } from "../../hooks/useDocument";
+import UpdateProduct from './UpdateProduct'
 
 
 //styles
@@ -8,8 +9,6 @@ import './Product.css'
 export default function Product() {
     const { id } = useParams();    
     const {error, document} = useDocument('productos', id)
-    
-
 
       // Create our number formatter.
     var formatter = new Intl.NumberFormat('en-US', {
@@ -23,8 +22,7 @@ export default function Product() {
     if(document){
     const price = parseInt(document.price)
     var priceFormat = formatter.format(price);
-    console.log(priceFormat)
-    
+   
     }  
     
     return (
@@ -36,12 +34,14 @@ export default function Product() {
                 <div className='product'>
                 <div className="image-container">
                 <img src={document.imgUrl} alt="Imagen de Producto" className="image" />
-                </div>
                 <div className="description">
                 <h3>{document.name}</h3>
                 <p>{document.details}</p>
-                {priceFormat&&<p>Precio: {priceFormat}</p>}
+                <p> ct: {document.ct}</p>                
                 </div>
+                {priceFormat&&<p>Precio: {priceFormat}</p>}
+                </div>                
+                {document&&<UpdateProduct product={document} />}
                 </div>
                 
                 </>

@@ -6,11 +6,11 @@
 .product {
  display: flex;
  justify-content: space-around;
- margin: 2% 10%;
+ margin: 2% 5%;
  background-color: '';
  display:flex;
   flex-wrap:wrap; /* this */
-  gap:10px;
+  gap:0px;
  
 }
 
@@ -29,5 +29,20 @@
 .image-container {
     max-width: 200px;
     max-height: auto;
+}
+
+/* update form */
+.form-container {
+    max-width: 400px;
+    margin-bottom: 10%;
+
+}
+.form-container label span {
+    font-size: 15px;
+    margin-top: 1%;
+}
+
+.form-container label input{
+    margin: 0%;
 }
 
