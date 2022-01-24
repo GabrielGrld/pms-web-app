@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import {useFirestore} from '../hooks/useFirestore'
 
+//Material UI components for Layout
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -13,6 +16,8 @@ import  './Card.css';
 
 
 export default function ActionAreaCard({ item}) {
+  const [sold, setSold] = useState(null)
+
   // Create our number formatter.
 var formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -23,6 +28,24 @@ var formatter = new Intl.NumberFormat('en-US', {
   //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
   //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
 });
+console.log(item.sold)
+const {updateDocument, response} = useFirestore('productos')
+console.log(item)
+  const handleSold = async () =>{      
+      if (!item.sold){
+        setSold(true)
+      }else{
+        setSold(false)
+      }      
+      const updateToDo={
+        sold        
+      }
+      await updateDocument(item.id, updateToDo)
+      if(!response.error){          
+      }
+  }
+
+
 
 
   const price = parseInt(item.price)
@@ -60,7 +83,8 @@ var formatter = new Intl.NumberFormat('en-US', {
       <Link  to={{pathname: `/producto/${item.id}`, query: {item }}}>
       <button className="comprar" onClick={()=>console.log("comprar activado")}> <EditIcon /> </button>
       </Link>
-      <button className="comprar"> <PaidIcon /> </button>
+      <button className="comprar" onClick={handleSold}> <PaidIcon /> </button>
+
     </Card>
     
     </>
