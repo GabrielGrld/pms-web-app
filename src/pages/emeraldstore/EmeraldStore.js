@@ -8,6 +8,7 @@ import {useHistory} from 'react-router-dom'
 
 //styles
 import './EmeraldStore.css'
+import { formLabelClasses } from '@mui/material'
 
 const categories = [
     { value: 'anillo', label: 'Anillo' },
@@ -51,7 +52,8 @@ export default function EmeraldStore() {
         details,
         ct,
         price, 
-        category: category.value,              
+        category: category.value,
+        sold: false             
       }
       await addDocument(product, image)
        console.log(product, image)
