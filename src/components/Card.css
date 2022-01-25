@@ -1,11 +1,12 @@
 .card {
+  display: flow-root;
     border-color: #F0BB62;
     border-width: 20px;
     /* background-color: rgb(152, 201, 247); */
     color: #064635;
 }
 
-.card .comprar {
+.card .editar {
   background-color: var(--primary-color); /* Green */
   border: none;
   color: white;
@@ -60,3 +61,13 @@
   text-decoration: none;
   color: inherit;
 }
+
+.sold-area{  
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.sold-area .sold {
+  color: green;
+}
+

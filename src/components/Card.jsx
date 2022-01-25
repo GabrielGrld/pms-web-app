@@ -53,7 +53,7 @@ console.log(item)
   return (
     <>
     
-    <Card className="card" sx={{ maxWidth: 345, minHeight:450, maxHeight:450    }}>
+    <Card className="card" sx={{ maxWidth: 345, minHeight:450, maxHeight:500    }}>
     <Link  to={{pathname: `/producto/${item.id}`, query: {item }}}>
       <CardActionArea>      
         <CardMedia
@@ -80,10 +80,13 @@ console.log(item)
         </CardContent>
       </CardActionArea>
       </Link>
+      <div className="sold-area">
+      {item.sold?<p className="sold">Vendido</p>:<p>Exibido</p>}
+      </div>
       <Link  to={{pathname: `/producto/${item.id}`, query: {item }}}>
-      <button className="comprar" onClick={()=>console.log("comprar activado")}> <EditIcon /> </button>
+      <button className="editar" onClick={()=>console.log("comprar activado")}> <EditIcon /> </button>
       </Link>
-      <button className="comprar" onClick={handleSold}> <PaidIcon /> </button>
+      <button className="editar" onClick={handleSold}> <PaidIcon /> </button>
 
     </Card>
     
