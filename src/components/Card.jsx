@@ -63,17 +63,17 @@ console.log(item)
           alt="emerald"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography align="left" gutterBottom variant="h5" component="div">
             {item.name.length<18?item.name: item.name.substring(0,14)+"..."}
           </Typography>
-          {/* <Typography variant="body2" color="text.secondary" className="card">
-            {item.details}
-          </Typography> */}
+          <Typography align="left" mb={"2%"} variant="body2" color="text.primary" className="card">
+           Categoria:  {item.category}
+          </Typography> 
           <div className="specs">
-          <Typography variant="body2" color="text.secondary" className="card">
+          <Typography align="left"  variant="body2" color="text.secondary" className="card">
             Precio: {priceFormat}
           </Typography>
-          <Typography variant="body2" color="text.secondary" className="card">
+          <Typography align="left" variant="body2" color="text.secondary" className="card">
             ct: {item.ct}
           </Typography>
           </div>
@@ -81,13 +81,12 @@ console.log(item)
       </CardActionArea>
       </Link>
       <div className="sold-area">
-      {item.sold?<p className="sold">Vendido</p>:<p>Exibido</p>}
+      {item.sold?<p className="sold">Vendido</p>:<p>Exhibido</p>}
       </div>
       <Link  to={{pathname: `/producto/${item.id}`, query: {item }}}>
       <button className="editar" onClick={()=>console.log("comprar activado")}> <EditIcon /> </button>
       </Link>
       <button className="editar" onClick={handleSold}> <PaidIcon /> </button>
-
     </Card>
     
     </>
