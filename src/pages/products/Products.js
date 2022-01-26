@@ -37,7 +37,7 @@ function Home(){
       <Grid container  spacing={1} justify = "center"   >
  
 {documents && documents.map((document) => (
-  <Grid  item xs={12} sm={12} md={4} lg ={4}>    
+  <Grid  item xs={12} sm={12} md={12} lg ={4}>    
     <div key={document.id} align="center">
     <Card  
           key = {document.imgUrl}
