@@ -36,7 +36,9 @@ export default function Product() {
                 <img src={document.imgUrl} alt="Imagen de Producto" className="image" />
                 <div className="description">
                 <h3>{document.name}</h3>
+                <span>Descripción</span>
                 <p>{document.details}</p>
+                <span>Kilates</span>
                 <p> ct: {document.ct}</p>                
                 </div>
                 {priceFormat&&<p>Precio: {priceFormat}</p>}

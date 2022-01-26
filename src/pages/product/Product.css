@@ -21,6 +21,10 @@
     margin-left:0%;
     max-width: 600px;
 }
+.description span{
+    font-size: 14px;
+    color: grey;
+}
 .image {    
     max-width:100%;
     max-height:auto;

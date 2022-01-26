@@ -22,7 +22,7 @@ function UpdateProduct({product}) {
           details,
           ct,
           price,
-          
+                   
         }
   
         await updateDocument(product.id, updateToDo)
