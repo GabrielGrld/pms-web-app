@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "pms-app-9c7d4"
-  }
+    "default": "pms-app-9c7d4",
+    "production": "pms-web-app-ec436"
+  },
+  "targets": {}
 }
